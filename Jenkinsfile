@@ -7,8 +7,10 @@ pipeline {
                    echo 'Checking out the source code from github ...'
                    checkout scm
 
-                   sh label: '', script: 'cp games_fn_v02.zip main.py audit_changes.py requirements.txt'
-
+                   sh label: '', script: 'docker build -t simple-web-app:latest'
+                
+                   sh label: '', script: 'docker build -t simple-web-app:latest'
+          
             }
         }
     }
