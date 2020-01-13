@@ -7,9 +7,9 @@ pipeline {
                    echo 'Checking out the source code from github ...'
                    checkout scm
 
-                   sh label: '', script: 'docker build -t simple-web-app'
+                   sh label: '', script: 'docker build -t simple-web-app:latest .'
                 
-                   sh label: '', script: 'docker build -t simple-web-app'
+                   sh label: '', script: 'docker run --rm -p 8181:8181 simple-web-app:latest'
           
             }
         }
